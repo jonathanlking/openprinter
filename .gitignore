@@ -23,4 +23,9 @@ _testmain.go
 *.test
 *.prof
 
+# Server
 server/server
+
+# Client
+client/dist
+client/node_modules

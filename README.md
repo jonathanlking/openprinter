@@ -1,4 +1,11 @@
-# openprinter
+<p align="center">
+    <a href="https://travis-ci.org/jonathanlking/openprinter/">
+        <img src="https://travis-ci.org/jonathanlking/openprinter.svg?branch=master"
+             alt="Travis">
+    </a>
+</p>
+
+# OpenPrinter
 
 ## Running
 This project uses [docker](https://www.docker.com) (and docker compose) for 

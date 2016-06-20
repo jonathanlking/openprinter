@@ -1,0 +1,35 @@
+{
+	"id": "1899ad31-d7d2-57e1-840e-aa31ab629eee",
+	"name": "OpenPrinter",
+	"description": "An open source Instagram printer\n",
+	"order": [
+		"bdd23e3d-a06f-5ad1-57f1-c88aff7d2ce1"
+	],
+	"folders": [],
+	"timestamp": 1466438703874,
+	"owner": "680879",
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "bdd23e3d-a06f-5ad1-57f1-c88aff7d2ce1",
+			"headers": "",
+			"url": "localhost:8080/ping",
+			"pathVariables": {},
+			"preRequestScript": null,
+			"method": "GET",
+			"collectionId": "1899ad31-d7d2-57e1-840e-aa31ab629eee",
+			"data": null,
+			"dataMode": "params",
+			"name": "localhost:8080/ping",
+			"description": "",
+			"descriptionFormat": "html",
+			"time": 1466439151914,
+			"version": 2,
+			"responses": [],
+			"tests": "tests[\"Body is pong\"] = responseBody.has(\"pong\");\n\ntests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Response time is less than 200ms\"] = responseTime < 200;",
+			"currentHelper": "normal",
+			"helperAttributes": {}
+		}
+	]
+}

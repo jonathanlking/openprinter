@@ -19,13 +19,11 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
   - docker-compose -v
   - docker -v
-  - sudo apt-get -y install npm
+  - sudo apt-get -y install nodejs-legacy npm
   - sudo npm install -g newman
 
 script:
   - docker-compose build
-  - docker-machine ls
-  - docker-machine ip default
   - docker-compose up -d
   - (cd server && newman -c openprinter.postman_collection.json)
 

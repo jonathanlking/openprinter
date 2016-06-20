@@ -1,7 +1,7 @@
 {
 	"id": "1899ad31-d7d2-57e1-840e-aa31ab629eee",
 	"name": "OpenPrinter",
-	"description": "An open source instagram printer\n",
+	"description": "An open source Instagram printer\n",
 	"order": [
 		"bdd23e3d-a06f-5ad1-57f1-c88aff7d2ce1"
 	],
@@ -27,7 +27,7 @@
 			"time": 1466439151914,
 			"version": 2,
 			"responses": [],
-			"tests": "tests[\"Body matches string\"] = responseBody.has(\"pong\");\n\ntests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Response time is less than 200ms\"] = responseTime < 200;",
+			"tests": "tests[\"Body is pong\"] = responseBody.has(\"pong\");\n\ntests[\"Status code is 200\"] = responseCode.code === 200;\n\ntests[\"Response time is less than 200ms\"] = responseTime < 200;",
 			"currentHelper": "normal",
 			"helperAttributes": {}
 		}

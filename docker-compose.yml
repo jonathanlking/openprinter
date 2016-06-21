@@ -1,20 +1,20 @@
 version: '2'
 services:
   ping-server:
-    build: .
+    build: server/
     restart: always
     command: ./server/server
     ports:
       - "8080:8080"
     environment:
       PORT: 8080
+    volumes:
+      - client-dist:/go/client/dist:ro
 
-# Update to user seperate client container      
-      
-#     volumes_from:
-#       - client
-# 
-#   client:
-#     build: client/
-#     volumes:
-#       - /src/dist
+  client:
+    build: client/
+    volumes:
+      - client-dist:/src/dist
+
+volumes:
+  client-dist:

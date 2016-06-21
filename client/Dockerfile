@@ -8,4 +8,5 @@ RUN cd src && npm install
 COPY . /src
 
 WORKDIR src/
+RUN rm -rf dist/*
 RUN gulp

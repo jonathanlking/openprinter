@@ -29,3 +29,4 @@ server/server
 # Client
 client/dist
 client/node_modules
+client/typings

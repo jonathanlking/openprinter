@@ -7,6 +7,8 @@ import (
 	"os"
 )
 
+const staticDir = "client/dist"
+
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -15,7 +17,8 @@ func main() {
 
 	http.HandleFunc("/ping", ping)
 
-	http.HandleFunc("/", hello)
+	fs := http.FileServer(http.Dir(staticDir))
+	http.Handle("/", http.StripPrefix("/", fs))
 
 	log.Printf("Listening on Port %s\n", port)
 	log.Fatal(http.ListenAndServe(":"+port, nil))
@@ -23,9 +26,4 @@ func main() {
 
 func ping(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintln(w, "pong")
-}
-
-func hello(w http.ResponseWriter, r *http.Request) {
-	// TODO: Remove `client/dist` as a static file wrapper
-	http.ServeFile(w, r, "client/dist/index.html")
 }
